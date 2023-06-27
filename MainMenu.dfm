@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 125
   Width = 870
   Height = 500
-  Caption = 'Form1'
+  Caption = 'Main Menu'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Form1: TForm1
     Left = 112
     Top = 40
     object mniProgram1: TMenuItem
-      Caption = 'PROGRAM'
+      Caption = 'FILE'
       object mniSiswa1: TMenuItem
         Caption = 'Tabek Siswa'
       end
