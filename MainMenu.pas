@@ -12,6 +12,8 @@ type
     mniProgram1: TMenuItem;
     mniExit1: TMenuItem;
     mniSiswa1: TMenuItem;
+    procedure mniSiswa1Click(Sender: TObject);
+    procedure mniExit1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,6 +25,18 @@ var
 
 implementation
 
+uses TabelSiswa;
+
 {$R *.dfm}
+
+procedure TForm1.mniSiswa1Click(Sender: TObject);
+begin
+Fsiswa.show;
+end;
+
+procedure TForm1.mniExit1Click(Sender: TObject);
+begin
+Close;
+end;
 
 end.

@@ -1,7 +1,7 @@
 object Fsiswa: TFsiswa
-  Left = 213
-  Top = 192
-  Width = 870
+  Left = 210
+  Top = 120
+  Width = 674
   Height = 500
   Caption = 'TABEL SISWA'
   Color = clBtnFace
@@ -13,10 +13,114 @@ object Fsiswa: TFsiswa
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object lbl1: TLabel
+    Left = 32
+    Top = 8
+    Width = 26
+    Height = 19
+    Caption = 'NIS'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl2: TLabel
+    Left = 32
+    Top = 40
+    Width = 99
+    Height = 19
+    Caption = 'NAMA SISWA'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl3: TLabel
+    Left = 32
+    Top = 72
+    Width = 26
+    Height = 19
+    Caption = 'NIK'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl4: TLabel
+    Left = 32
+    Top = 104
+    Width = 112
+    Height = 19
+    Caption = 'TEMPAT LAHIR'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl5: TLabel
+    Left = 32
+    Top = 136
+    Width = 124
+    Height = 19
+    Caption = 'TANGGAL LAHIR'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl6: TLabel
+    Left = 32
+    Top = 168
+    Width = 113
+    Height = 19
+    Caption = 'JENIS KELAMIN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl7: TLabel
+    Left = 32
+    Top = 200
+    Width = 63
+    Height = 19
+    Caption = 'ALAMAT'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl8: TLabel
+    Left = 32
+    Top = 232
+    Width = 127
+    Height = 19
+    Caption = 'NOMER TELEPON'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object dbgrd1: TDBGrid
     Left = 8
     Top = 336
-    Width = 841
+    Width = 641
     Height = 120
     DataSource = ds1
     TabOrder = 0
@@ -25,6 +129,77 @@ object Fsiswa: TFsiswa
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object Edit1: TEdit
+    Left = 208
+    Top = 0
+    Width = 313
+    Height = 29
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 208
+    Top = 32
+    Width = 313
+    Height = 29
+    TabOrder = 2
+  end
+  object Edit3: TEdit
+    Left = 208
+    Top = 64
+    Width = 313
+    Height = 29
+    TabOrder = 3
+  end
+  object Edit4: TEdit
+    Left = 208
+    Top = 96
+    Width = 313
+    Height = 29
+    TabOrder = 4
+  end
+  object dtp1: TDateTimePicker
+    Left = 208
+    Top = 128
+    Width = 313
+    Height = 29
+    Date = 45104.594050474540000000
+    Time = 45104.594050474540000000
+    TabOrder = 5
+  end
+  object Edit5: TEdit
+    Left = 208
+    Top = 192
+    Width = 313
+    Height = 29
+    TabOrder = 6
+  end
+  object cbb1: TComboBox
+    Left = 208
+    Top = 160
+    Width = 313
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 7
+    Items.Strings = (
+      'Laki-Laki'
+      'Perempuan')
+  end
+  object Edit6: TEdit
+    Left = 208
+    Top = 224
+    Width = 313
+    Height = 29
+    TabOrder = 8
+  end
+  object btn1: TButton
+    Left = 72
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'TAMBAH DATA'
+    TabOrder = 9
+    OnClick = btn1Click
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -36,8 +211,8 @@ object Fsiswa: TFsiswa
     User = 'root'
     Protocol = 'mysql'
     LibraryLocation = 'E:\SEMESTER 4\VISUAL 2\Tugas Akhir\libmysql.dll'
-    Left = 680
-    Top = 128
+    Left = 584
+    Top = 96
   end
   object ZQuery1: TZQuery
     Connection = ZConnection1
@@ -45,12 +220,12 @@ object Fsiswa: TFsiswa
     SQL.Strings = (
       'select *from tabel_siswa')
     Params = <>
-    Left = 744
-    Top = 224
+    Left = 584
+    Top = 208
   end
   object ds1: TDataSource
     DataSet = ZQuery1
-    Left = 688
-    Top = 224
+    Left = 584
+    Top = 152
   end
 end
