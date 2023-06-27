@@ -1,6 +1,6 @@
-object Form2: TForm2
-  Left = 207
-  Top = 148
+object Fsiswa: TFsiswa
+  Left = 213
+  Top = 192
   Width = 870
   Height = 500
   Caption = 'TABEL SISWA'

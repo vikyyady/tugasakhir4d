@@ -8,7 +8,7 @@ uses
   ZDataset, ZAbstractConnection, ZConnection;
 
 type
-  TForm2 = class(TForm)
+  TFsiswa = class(TForm)
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     ds1: TDataSource;
@@ -20,7 +20,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  Fsiswa: TFsiswa;
 
 implementation
 
