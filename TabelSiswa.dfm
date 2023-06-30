@@ -129,33 +129,34 @@ object Fsiswa: TFsiswa
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object Edit1: TEdit
     Left = 208
     Top = 0
     Width = 313
-    Height = 29
+    Height = 21
     TabOrder = 1
   end
   object Edit2: TEdit
     Left = 208
     Top = 32
     Width = 313
-    Height = 29
+    Height = 21
     TabOrder = 2
   end
   object Edit3: TEdit
     Left = 208
     Top = 64
     Width = 313
-    Height = 29
+    Height = 21
     TabOrder = 3
   end
   object Edit4: TEdit
     Left = 208
     Top = 96
     Width = 313
-    Height = 29
+    Height = 21
     TabOrder = 4
   end
   object dtp1: TDateTimePicker
@@ -171,7 +172,7 @@ object Fsiswa: TFsiswa
     Left = 208
     Top = 192
     Width = 313
-    Height = 29
+    Height = 21
     TabOrder = 6
   end
   object cbb1: TComboBox
@@ -189,17 +190,53 @@ object Fsiswa: TFsiswa
     Left = 208
     Top = 224
     Width = 313
-    Height = 29
+    Height = 21
     TabOrder = 8
   end
   object btn1: TButton
-    Left = 72
+    Left = 16
     Top = 280
     Width = 89
     Height = 41
     Caption = 'TAMBAH DATA'
     TabOrder = 9
     OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 120
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'EDIT DATA'
+    TabOrder = 10
+    OnClick = btn2Click
+  end
+  object btn3: TButton
+    Left = 224
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'HAPUS DATA'
+    TabOrder = 11
+    OnClick = btn3Click
+  end
+  object btn4: TButton
+    Left = 328
+    Top = 280
+    Width = 97
+    Height = 41
+    Caption = 'CLEAR'
+    TabOrder = 12
+    OnClick = btn4Click
+  end
+  object btn5: TButton
+    Left = 440
+    Top = 280
+    Width = 97
+    Height = 41
+    Caption = 'KELUAR'
+    TabOrder = 13
+    OnClick = btn5Click
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP

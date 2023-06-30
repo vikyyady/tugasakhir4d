@@ -30,7 +30,17 @@ type
     cbb1: TComboBox;
     Edit6: TEdit;
     btn1: TButton;
+    btn2: TButton;
+    btn3: TButton;
+    btn4: TButton;
+    btn5: TButton;
+    procedure bersih;
     procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn3Click(Sender: TObject);
+    procedure btn4Click(Sender: TObject);
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,10 +49,23 @@ type
 
 var
   Fsiswa: TFsiswa;
+  id: string;
 
 implementation
 
 {$R *.dfm}
+
+procedure TFsiswa.bersih;
+begin
+  Edit1.Clear;
+  Edit2.Clear;
+  Edit3.Clear;
+  Edit4.Clear;
+  dtp1.Date := Now; // Mengatur tanggal menjadi hari ini
+  cbb1.ClearSelection; // Menghapus item yang dipilih pada ComboBox
+  Edit5.Clear;
+  Edit6.Clear;
+end;
 
 procedure TFsiswa.btn1Click(Sender: TObject);
 var
@@ -69,8 +92,80 @@ begin
     ZQuery1.SQL.Clear;
     ZQuery1.SQL.Add('SELECT * FROM tabel_siswa');
     ZQuery1.Open;
+    bersih;
   end;
 
+end;
+
+procedure TFsiswa.btn2Click(Sender: TObject);
+begin
+  id := ZQuery1.FieldByName('id_siswa').AsString; // Mendapatkan nilai ID dari record yang dipilih
+
+  if id = '' then
+  begin
+    ShowMessage('Tidak ada record yang dipilih.');
+    Exit;
+  end;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('UPDATE tabel_siswa SET nis = "' + Edit1.Text + '",');
+  ZQuery1.SQL.Add('nama_siswa = "' + Edit2.Text + '",');
+  ZQuery1.SQL.Add('nik = "' + Edit3.Text + '",');
+  ZQuery1.SQL.Add('tempat_lahir = "' + Edit4.Text + '",');
+  ZQuery1.SQL.Add('tanggal_lahir = "' + FormatDateTime('YYYY-MM-DD', dtp1.Date) + '",');
+  ZQuery1.SQL.Add('jenis_kelamin = "' + cbb1.Text + '",');
+  ZQuery1.SQL.Add('alamat = "' + Edit5.Text + '",');
+  ZQuery1.SQL.Add('telp = "' + Edit6.Text + '"');
+  ZQuery1.SQL.Add('WHERE id_siswa = "' + id + '"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('SELECT * FROM tabel_siswa');
+  ZQuery1.Open;
+
+  ShowMessage('Data Berhasil Di Edit');
+end;
+procedure TFsiswa.dbgrd1CellClick(Column: TColumn);
+begin
+  Edit1.Text := ZQuery1.FieldByName('nis').AsString;
+  Edit2.Text := ZQuery1.FieldByName('nama_siswa').AsString;
+  Edit3.Text := ZQuery1.FieldByName('nik').AsString;
+  Edit4.Text := ZQuery1.FieldByName('tempat_lahir').AsString;
+  dtp1.Date := ZQuery1.FieldByName('tanggal_lahir').AsDateTime;
+  cbb1.Text := ZQuery1.FieldByName('jenis_kelamin').AsString;
+  Edit5.Text := ZQuery1.FieldByName('alamat').AsString;
+  Edit6.Text := ZQuery1.FieldByName('telp').AsString;
+end;
+
+procedure TFsiswa.btn3Click(Sender: TObject);
+begin
+  id := ZQuery1.FieldByName('id_siswa').AsString; // Mendapatkan nilai ID dari record yang dipilih
+
+  if id = '' then
+  begin
+    ShowMessage('Tidak ada record yang dipilih.');
+    Exit;
+  end;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('DELETE FROM tabel_siswa WHERE id_siswa = "' + id + '"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('SELECT * FROM tabel_siswa');
+  ZQuery1.Open;
+
+  ShowMessage('Data berhasil dihapus');
+end;
+
+procedure TFsiswa.btn4Click(Sender: TObject);
+begin
+bersih;
+end;
+
+procedure TFsiswa.btn5Click(Sender: TObject);
+begin
+Close;
 end;
 
 end.
