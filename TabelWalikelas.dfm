@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 449
-  Top = 165
+  Left = 444
+  Top = 160
   Width = 672
   Height = 500
   Caption = 'Tabel Wali Kelas'
@@ -13,6 +13,110 @@ object Form2: TForm2
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object lbl1: TLabel
+    Left = 32
+    Top = 8
+    Width = 26
+    Height = 19
+    Caption = 'NIP'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl2: TLabel
+    Left = 32
+    Top = 40
+    Width = 140
+    Height = 19
+    Caption = 'NAMA WALI KELAS'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl3: TLabel
+    Left = 32
+    Top = 72
+    Width = 113
+    Height = 19
+    Caption = 'JENIS KELAMIN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl4: TLabel
+    Left = 32
+    Top = 104
+    Width = 94
+    Height = 19
+    Caption = 'PENDIDIKAN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl5: TLabel
+    Left = 32
+    Top = 136
+    Width = 127
+    Height = 19
+    Caption = 'NOMER TELEPON'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl6: TLabel
+    Left = 32
+    Top = 168
+    Width = 136
+    Height = 19
+    Caption = 'MATA PELAJARAN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl7: TLabel
+    Left = 32
+    Top = 200
+    Width = 63
+    Height = 19
+    Caption = 'ALAMAT'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl8: TLabel
+    Left = 32
+    Top = 232
+    Width = 60
+    Height = 19
+    Caption = 'STATUS'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object dbgrd1: TDBGrid
     Left = 8
     Top = 336
@@ -25,6 +129,67 @@ object Form2: TForm2
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object Edit1: TEdit
+    Left = 216
+    Top = 8
+    Width = 313
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 216
+    Top = 40
+    Width = 313
+    Height = 21
+    TabOrder = 2
+  end
+  object cbb1: TComboBox
+    Left = 216
+    Top = 72
+    Width = 313
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 3
+    Text = 'cbb1'
+    Items.Strings = (
+      'Laki-laki'
+      'Perempuan')
+  end
+  object Edit3: TEdit
+    Left = 216
+    Top = 104
+    Width = 313
+    Height = 21
+    TabOrder = 4
+  end
+  object Edit4: TEdit
+    Left = 216
+    Top = 136
+    Width = 313
+    Height = 21
+    TabOrder = 5
+  end
+  object Edit5: TEdit
+    Left = 216
+    Top = 168
+    Width = 313
+    Height = 21
+    TabOrder = 6
+  end
+  object Edit6: TEdit
+    Left = 216
+    Top = 200
+    Width = 313
+    Height = 21
+    TabOrder = 7
+  end
+  object Edit7: TEdit
+    Left = 216
+    Top = 232
+    Width = 313
+    Height = 21
+    TabOrder = 8
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
