@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 419
-  Top = 150
+  Left = 263
+  Top = 153
   Width = 870
   Height = 500
   Caption = 'Main Menu'
@@ -22,6 +22,9 @@ object Form1: TForm1
       object mniSiswa1: TMenuItem
         Caption = 'Tabek Siswa'
         OnClick = mniSiswa1Click
+      end
+      object mnitabelwla1: TMenuItem
+        Caption = 'Tabel Wali Kelas'
       end
     end
     object mniExit1: TMenuItem

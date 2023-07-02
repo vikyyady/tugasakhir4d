@@ -1,7 +1,7 @@
 object Fsiswa: TFsiswa
-  Left = 210
-  Top = 120
-  Width = 674
+  Left = 219
+  Top = 150
+  Width = 673
   Height = 500
   Caption = 'TABEL SISWA'
   Color = clBtnFace

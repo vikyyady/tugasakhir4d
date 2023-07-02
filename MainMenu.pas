@@ -12,6 +12,7 @@ type
     mniProgram1: TMenuItem;
     mniExit1: TMenuItem;
     mniSiswa1: TMenuItem;
+    mnitabelwla1: TMenuItem;
     procedure mniSiswa1Click(Sender: TObject);
     procedure mniExit1Click(Sender: TObject);
   private
