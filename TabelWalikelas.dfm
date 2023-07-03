@@ -210,6 +210,15 @@ object FwaliKelas: TFwaliKelas
     TabOrder = 10
     OnClick = btn2Click
   end
+  object btn3: TButton
+    Left = 240
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'HAPUS DATA'
+    TabOrder = 11
+    OnClick = btn3Click
+  end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False

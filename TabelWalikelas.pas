@@ -31,11 +31,13 @@ type
     Edit7: TEdit;
     btn1: TButton;
     btn2: TButton;
+    btn3: TButton;
     procedure bersih;
     procedure btn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btn2Click(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,12 +56,12 @@ procedure TFwaliKelas.bersih;
 begin
   Edit1.Clear;
   Edit2.Clear;
+  cbb1.ClearSelection;
   Edit3.Clear;
   Edit4.Clear;
-  dtp1.Date := Now; // Mengatur tanggal menjadi hari ini
-  cbb1.ClearSelection; // Menghapus item yang dipilih pada ComboBox
   Edit5.Clear;
   Edit6.Clear;
+  Edit7.Clear;
 end;
 
 procedure TFwaliKelas.btn1Click(Sender: TObject);
@@ -135,4 +137,24 @@ begin
   Edit7.Text := ZQuery1.FieldByName('status').AsString;
 end;
 
+procedure TFwaliKelas.btn3Click(Sender: TObject);
+begin
+  id := ZQuery1.FieldByName('id_waliKelas').AsString; // Mendapatkan nilai ID dari record yang dipilih
+
+  if id = '' then
+  begin
+    ShowMessage('Tidak ada record yang dipilih.');
+    Exit;
+  end;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('DELETE FROM tabel_waliKelas WHERE id_waliKelas = "' + id + '"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('SELECT * FROM tabel_waliKelas');
+  ZQuery1.Open;
+
+  ShowMessage('Data berhasil dihapus');
+end;
 end.
