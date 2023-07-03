@@ -32,12 +32,16 @@ type
     btn1: TButton;
     btn2: TButton;
     btn3: TButton;
+    btn4: TButton;
+    btn5: TButton;
     procedure bersih;
     procedure btn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btn2Click(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
     procedure btn3Click(Sender: TObject);
+    procedure btn4Click(Sender: TObject);
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -157,4 +161,14 @@ begin
 
   ShowMessage('Data berhasil dihapus');
 end;
+procedure TFwaliKelas.btn4Click(Sender: TObject);
+begin
+bersih;
+end;
+
+procedure TFwaliKelas.btn5Click(Sender: TObject);
+begin
+Close;
+end;
+
 end.

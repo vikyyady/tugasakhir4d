@@ -1,6 +1,6 @@
 object FwaliKelas: TFwaliKelas
-  Left = 585
-  Top = 141
+  Left = 384
+  Top = 170
   Width = 672
   Height = 500
   Caption = 'Tabel Wali Kelas'
@@ -218,6 +218,24 @@ object FwaliKelas: TFwaliKelas
     Caption = 'HAPUS DATA'
     TabOrder = 11
     OnClick = btn3Click
+  end
+  object btn4: TButton
+    Left = 344
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'CLEAR'
+    TabOrder = 12
+    OnClick = btn4Click
+  end
+  object btn5: TButton
+    Left = 552
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'KELUAR'
+    TabOrder = 13
+    OnClick = btn5Click
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
