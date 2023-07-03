@@ -29,6 +29,8 @@ type
     Edit6: TEdit;
     Edit7: TEdit;
     cbb1: TComboBox;
+    btn1: TButton;
+    procedure btn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,5 +43,29 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFtabelOrtu.btn1Click(Sender: TObject);
+begin
+  if edit1.Text = '' then    // VALIDASI INPUTAN KOSONG
+  begin
+    Edit1.SetFocus;
+    ShowMessage('Nik wajib Diisi!');
+  end
+  else if edit2.Text = '' then
+  begin
+    Edit2.SetFocus;
+    ShowMessage('Nama wajib Diisi!');
+  end
+  else
+  begin
+    ZQuery1.SQL.Clear;   // Kode simpan
+    ZQuery1.SQL.Add('INSERT INTO tabel_ortu VALUES (null, "' + edit1.Text + '", "' + edit2.Text + '", "' + edit3.Text + '", "' + edit4.Text + '", "' + edit5.Text + '", "' + edit6.Text + '", "' + cbb1.Text + '", "' + edit7.Text + '")');
+    ZQuery1.ExecSQL;
+
+    ZQuery1.SQL.Clear;
+    ZQuery1.SQL.Add('SELECT * FROM tabel_ortu');
+    ZQuery1.Open;
+  end;
+end;
 
 end.

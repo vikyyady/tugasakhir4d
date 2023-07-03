@@ -190,6 +190,15 @@ object FtabelOrtu: TFtabelOrtu
       'Laki-laki'
       'Perempuan')
   end
+  object btn1: TButton
+    Left = 24
+    Top = 280
+    Width = 81
+    Height = 41
+    Caption = 'TAMBAH DATA'
+    TabOrder = 9
+    OnClick = btn1Click
+  end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
