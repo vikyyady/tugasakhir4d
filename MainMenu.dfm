@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 231
-  Top = 296
+  Left = 423
+  Top = 279
   Width = 870
   Height = 408
   Caption = 'Main Menu'
