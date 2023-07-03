@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, DB, ZAbstractRODataset, ZAbstractDataset,
-  ZDataset, ZAbstractConnection, ZConnection, StdCtrls;
+  ZDataset, ZAbstractConnection, ZConnection, StdCtrls, frxClass, frxDBSet;
 
 type
   TTFortu = class(TForm)
@@ -33,12 +33,16 @@ type
     btn2: TButton;
     btn3: TButton;
     btn4: TButton;
+    btn5: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
     procedure bersih;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
     procedure btn3Click(Sender: TObject);
     procedure btn4Click(Sender: TObject);
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -154,6 +158,11 @@ end;
 procedure TTFortu.btn4Click(Sender: TObject);
 begin
 bersih;
+end;
+
+procedure TTFortu.btn5Click(Sender: TObject);
+begin
+frxReport1.ShowReport()
 end;
 
 end.
