@@ -31,9 +31,11 @@ type
     cbb1: TComboBox;
     btn1: TButton;
     btn2: TButton;
+    btn3: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -111,6 +113,27 @@ begin
   Edit6.Text := ZQuery1.FieldByName('alamat').AsString;
   cbb1.Text := ZQuery1.FieldByName('jenis_kelamin').AsString;
   Edit7.Text := ZQuery1.FieldByName('status').AsString;
+end;
+
+procedure TFtabelOrtu.btn3Click(Sender: TObject);
+begin
+  id := ZQuery1.FieldByName('id_ortu').AsString; // Mendapatkan nilai ID dari record yang dipilih
+
+  if id = '' then
+  begin
+    ShowMessage('Tidak ada record yang dipilih.');
+    Exit;
+  end;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('DELETE FROM tabel_ortu WHERE id_ortu = "' + id + '"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('SELECT * FROM tabel_ortu');
+  ZQuery1.Open;
+
+  ShowMessage('Data berhasil dihapus');
 end;
 
 end.
