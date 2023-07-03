@@ -25,6 +25,7 @@ object Form1: TForm1
       end
       object mnitabelwla1: TMenuItem
         Caption = 'Tabel Wali Kelas'
+        OnClick = mnitabelwla1Click
       end
     end
     object mniExit1: TMenuItem

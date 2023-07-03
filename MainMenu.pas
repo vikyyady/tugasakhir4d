@@ -15,6 +15,7 @@ type
     mnitabelwla1: TMenuItem;
     procedure mniSiswa1Click(Sender: TObject);
     procedure mniExit1Click(Sender: TObject);
+    procedure mnitabelwla1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,7 +27,7 @@ var
 
 implementation
 
-uses TabelSiswa;
+uses TabelSiswa, TabelWalikelas;
 
 {$R *.dfm}
 
@@ -38,6 +39,11 @@ end;
 procedure TForm1.mniExit1Click(Sender: TObject);
 begin
 Close;
+end;
+
+procedure TForm1.mnitabelwla1Click(Sender: TObject);
+begin
+FwaliKelas.show;
 end;
 
 end.

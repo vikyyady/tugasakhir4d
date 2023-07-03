@@ -1,6 +1,6 @@
 object Fsiswa: TFsiswa
-  Left = 219
-  Top = 150
+  Left = 195
+  Top = 142
   Width = 673
   Height = 500
   Caption = 'TABEL SISWA'

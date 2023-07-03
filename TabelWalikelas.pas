@@ -8,7 +8,7 @@ uses
   ZDataset, ZAbstractConnection, ZConnection, StdCtrls;
 
 type
-  TForm2 = class(TForm)
+  TFwaliKelas = class(TForm)
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     ds1: TDataSource;
@@ -29,6 +29,13 @@ type
     Edit5: TEdit;
     Edit6: TEdit;
     Edit7: TEdit;
+    btn1: TButton;
+    btn2: TButton;
+    procedure bersih;
+    procedure btn1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btn2Click(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -36,10 +43,96 @@ type
   end;
 
 var
-  Form2: TForm2;
+  FwaliKelas: TFwaliKelas;
+  id: string;
 
 implementation
 
 {$R *.dfm}
+
+procedure TFwaliKelas.bersih;
+begin
+  Edit1.Clear;
+  Edit2.Clear;
+  Edit3.Clear;
+  Edit4.Clear;
+  dtp1.Date := Now; // Mengatur tanggal menjadi hari ini
+  cbb1.ClearSelection; // Menghapus item yang dipilih pada ComboBox
+  Edit5.Clear;
+  Edit6.Clear;
+end;
+
+procedure TFwaliKelas.btn1Click(Sender: TObject);
+begin
+  if edit1.Text = '' then    // VALIDASI INPUTAN KOSONG
+  begin
+    Edit1.SetFocus;
+    ShowMessage('Nis wajib Diisi!');
+  end
+  else if edit2.Text = '' then
+  begin
+    Edit2.SetFocus;
+    ShowMessage('Nama wajib Diisi!');
+  end
+  else
+  begin
+    ZQuery1.SQL.Clear;   // Kode simpan
+    ZQuery1.SQL.Add('INSERT INTO tabel_waliKelas VALUES (null, "' + edit1.Text + '", "' + edit2.Text + '", "' + cbb1.Text + '", "' + edit3.Text + '", "' + edit4.Text + '", "' + edit5.Text + '", "' + edit6.Text + '", "' + edit7.Text + '")');
+    ZQuery1.ExecSQL;
+
+    ZQuery1.SQL.Clear;
+    ZQuery1.SQL.Add('SELECT * FROM tabel_waliKelas');
+    ZQuery1.Open;
+  end;
+end;
+
+procedure TFwaliKelas.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  // Lakukan penutupan form dan pembebasan sumber daya yang diperlukan di sini
+  ZQuery1.Close;
+  ZConnection1.Disconnect;
+  Action := caFree; // Bebaskan form dari memori
+end;
+
+procedure TFwaliKelas.btn2Click(Sender: TObject);
+begin
+  id := ZQuery1.FieldByName('id_waliKelas').AsString; // Mendapatkan nilai ID dari record yang dipilih
+
+  if id = '' then
+  begin
+    ShowMessage('Tidak ada record yang dipilih.');
+    Exit;
+  end;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('UPDATE tabel_waliKelas SET nip = "' + Edit1.Text + '",');
+  ZQuery1.SQL.Add('nama = "' + Edit2.Text + '",');
+  ZQuery1.SQL.Add('jenis_kelamin = "' + cbb1.Text + '",');
+  ZQuery1.SQL.Add('pendidikan = "' + Edit3.Text + '",');
+  ZQuery1.SQL.Add('telp = "' + Edit4.Text + '",');
+  ZQuery1.SQL.Add('matpel = "' + Edit5.Text + '",');
+  ZQuery1.SQL.Add('alamat = "' + Edit6.Text + '",'); // Tambahkan tanda kutip tambahan di sini
+  ZQuery1.SQL.Add('status = "' + Edit7.Text + '"');
+  ZQuery1.SQL.Add('WHERE id_waliKelas = "' + id + '"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('SELECT * FROM tabel_siswa');
+  ZQuery1.Open;
+
+  ShowMessage('Data Berhasil Di Edit');
+end;
+
+procedure TFwaliKelas.dbgrd1CellClick(Column: TColumn);
+begin
+  Edit1.Text := ZQuery1.FieldByName('nip').AsString;
+  Edit2.Text := ZQuery1.FieldByName('nama').AsString;
+  cbb1.Text := ZQuery1.FieldByName('jenis_kelamin').AsString;
+  Edit3.Text := ZQuery1.FieldByName('pendidikan').AsString;
+  Edit4.Text := ZQuery1.FieldByName('telp').AsString;
+  Edit5.Text := ZQuery1.FieldByName('matpel').AsString;
+  Edit6.Text := ZQuery1.FieldByName('alamat').AsString;
+  Edit7.Text := ZQuery1.FieldByName('status').AsString;
+end;
 
 end.

@@ -1,6 +1,6 @@
-object Form2: TForm2
-  Left = 444
-  Top = 160
+object FwaliKelas: TFwaliKelas
+  Left = 585
+  Top = 141
   Width = 672
   Height = 500
   Caption = 'Tabel Wali Kelas'
@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -129,6 +130,7 @@ object Form2: TForm2
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object Edit1: TEdit
     Left = 216
@@ -151,7 +153,6 @@ object Form2: TForm2
     Height = 21
     ItemHeight = 13
     TabOrder = 3
-    Text = 'cbb1'
     Items.Strings = (
       'Laki-laki'
       'Perempuan')
@@ -190,6 +191,24 @@ object Form2: TForm2
     Width = 313
     Height = 21
     TabOrder = 8
+  end
+  object btn1: TButton
+    Left = 16
+    Top = 280
+    Width = 97
+    Height = 41
+    Caption = 'TAMBAH DATA'
+    TabOrder = 9
+    OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 128
+    Top = 280
+    Width = 97
+    Height = 41
+    Caption = 'EDIT DATA'
+    TabOrder = 10
+    OnClick = btn2Click
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
