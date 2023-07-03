@@ -29,7 +29,7 @@ var
 
 implementation
 
-uses TabelSiswa, TabelWalikelas;
+uses TabelSiswa, TabelWalikelas, TabelOrtu;
 
 {$R *.dfm}
 

@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 263
-  Top = 153
+  Left = 231
+  Top = 296
   Width = 870
-  Height = 500
+  Height = 408
   Caption = 'Main Menu'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -26,6 +26,10 @@ object Form1: TForm1
       object mnitabelwla1: TMenuItem
         Caption = 'Tabel Wali Kelas'
         OnClick = mnitabelwla1Click
+      end
+      object mniOrangTua1: TMenuItem
+        Caption = 'Tabel Orang Tua'
+        OnClick = mniOrangTua1Click
       end
     end
     object mniExit1: TMenuItem

@@ -1,6 +1,6 @@
 object FwaliKelas: TFwaliKelas
-  Left = 491
-  Top = 166
+  Left = 267
+  Top = 161
   Width = 672
   Height = 500
   Caption = 'Tabel Wali Kelas'
