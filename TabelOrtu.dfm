@@ -1,6 +1,6 @@
 object TFortu: TTFortu
-  Left = 439
-  Top = 251
+  Left = 417
+  Top = 171
   Width = 671
   Height = 500
   Caption = 'TABEL ORTU'

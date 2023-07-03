@@ -14,6 +14,7 @@ type
     mniSiswa1: TMenuItem;
     mnitabelwla1: TMenuItem;
     mniOrangTua1: TMenuItem;
+    mniabelpoin1: TMenuItem;
     procedure mniSiswa1Click(Sender: TObject);
     procedure mniExit1Click(Sender: TObject);
     procedure mnitabelwla1Click(Sender: TObject);

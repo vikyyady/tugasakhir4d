@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 423
-  Top = 279
+  Left = 341
+  Top = 183
   Width = 870
   Height = 408
   Caption = 'Main Menu'
@@ -30,6 +30,9 @@ object Form1: TForm1
       object mniOrangTua1: TMenuItem
         Caption = 'Tabel Orang Tua'
         OnClick = mniOrangTua1Click
+      end
+      object mniabelpoin1: TMenuItem
+        Caption = 'Tabel Poin'
       end
     end
     object mniExit1: TMenuItem
