@@ -30,7 +30,10 @@ type
     Edit7: TEdit;
     cbb1: TComboBox;
     btn1: TButton;
+    btn2: TButton;
     procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -39,6 +42,7 @@ type
 
 var
   FtabelOrtu: TFtabelOrtu;
+  id: string;
 
 implementation
 
@@ -66,6 +70,47 @@ begin
     ZQuery1.SQL.Add('SELECT * FROM tabel_ortu');
     ZQuery1.Open;
   end;
+end;
+
+procedure TFtabelOrtu.btn2Click(Sender: TObject);
+begin
+  id := ZQuery1.FieldByName('id_ortu').AsString; // Mendapatkan nilai ID dari record yang dipilih
+
+  if id = '' then
+  begin
+    ShowMessage('Tidak ada record yang dipilih.');
+    Exit;
+  end;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('UPDATE tabel_ortu SET nik = "' + Edit1.Text + '",');
+  ZQuery1.SQL.Add('nama = "' + Edit2.Text + '",');
+  ZQuery1.SQL.Add('pendidikan = "' + Edit3.Text + '",');
+  ZQuery1.SQL.Add('pekerjaan = "' + Edit4.Text + '",');
+  ZQuery1.SQL.Add('telp = "' + Edit5.Text + '",');
+  ZQuery1.SQL.Add('alamat = "' + Edit6.Text + '",'); // Tambahkan tanda kutip tambahan di sini
+  ZQuery1.SQL.Add('jenis_kelamin = "' + cbb1.Text + '",');
+  ZQuery1.SQL.Add('status = "' + Edit7.Text + '"');
+  ZQuery1.SQL.Add('WHERE id_ortu = "' + id + '"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('SELECT * FROM tabel_ortu');
+  ZQuery1.Open;
+
+  ShowMessage('Data Berhasil Di Edit');
+end;
+
+procedure TFtabelOrtu.dbgrd1CellClick(Column: TColumn);
+begin
+  Edit1.Text := ZQuery1.FieldByName('nik').AsString;
+  Edit2.Text := ZQuery1.FieldByName('nama').AsString;
+  Edit3.Text := ZQuery1.FieldByName('pendidikan').AsString;
+  Edit4.Text := ZQuery1.FieldByName('pekerjaan').AsString;
+  Edit5.Text := ZQuery1.FieldByName('telp').AsString;
+  Edit6.Text := ZQuery1.FieldByName('alamat').AsString;
+  cbb1.Text := ZQuery1.FieldByName('jenis_kelamin').AsString;
+  Edit7.Text := ZQuery1.FieldByName('status').AsString;
 end;
 
 end.

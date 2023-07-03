@@ -1,6 +1,6 @@
 object FtabelOrtu: TFtabelOrtu
-  Left = 293
-  Top = 138
+  Left = 396
+  Top = 155
   Width = 671
   Height = 500
   Caption = 'TABEL ORTU'
@@ -129,6 +129,7 @@ object FtabelOrtu: TFtabelOrtu
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object Edit1: TEdit
     Left = 216
@@ -198,6 +199,15 @@ object FtabelOrtu: TFtabelOrtu
     Caption = 'TAMBAH DATA'
     TabOrder = 9
     OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 120
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'EDIT DATA'
+    TabOrder = 10
+    OnClick = btn2Click
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
