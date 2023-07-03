@@ -1,6 +1,6 @@
-object FtabelOrtu: TFtabelOrtu
-  Left = 569
-  Top = 206
+object TFortu: TTFortu
+  Left = 439
+  Top = 251
   Width = 671
   Height = 500
   Caption = 'TABEL ORTU'
@@ -217,6 +217,15 @@ object FtabelOrtu: TFtabelOrtu
     Caption = 'HAPUS DATA'
     TabOrder = 11
     OnClick = btn3Click
+  end
+  object btn4: TButton
+    Left = 328
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'CLEAR'
+    TabOrder = 12
+    OnClick = btn4Click
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP

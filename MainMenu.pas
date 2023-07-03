@@ -50,7 +50,7 @@ end;
 
 procedure TForm1.mniOrangTua1Click(Sender: TObject);
 begin
-FtabelOrtu.show;
+TFortu.show;
 end;
 
 end.

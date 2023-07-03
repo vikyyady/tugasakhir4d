@@ -8,7 +8,7 @@ uses
   ZDataset, ZAbstractConnection, ZConnection, StdCtrls;
 
 type
-  TFtabelOrtu = class(TForm)
+  TTFortu = class(TForm)
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     ds1: TDataSource;
@@ -32,10 +32,13 @@ type
     btn1: TButton;
     btn2: TButton;
     btn3: TButton;
+    btn4: TButton;
+    procedure bersih;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
     procedure btn3Click(Sender: TObject);
+    procedure btn4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,14 +46,26 @@ type
   end;
 
 var
-  FtabelOrtu: TFtabelOrtu;
+  TFortu: TTFortu;
   id: string;
 
 implementation
 
 {$R *.dfm}
 
-procedure TFtabelOrtu.btn1Click(Sender: TObject);
+procedure TTFortu.bersih;
+begin
+  Edit1.Clear;
+  Edit2.Clear;
+  Edit3.Clear;
+  Edit4.Clear;
+  Edit5.Clear;
+  Edit6.Clear;
+  cbb1.ClearSelection;
+  Edit7.Clear;
+end;
+
+procedure TTFortu.btn1Click(Sender: TObject);
 begin
   if edit1.Text = '' then    // VALIDASI INPUTAN KOSONG
   begin
@@ -74,7 +89,7 @@ begin
   end;
 end;
 
-procedure TFtabelOrtu.btn2Click(Sender: TObject);
+procedure TTFortu.btn2Click(Sender: TObject);
 begin
   id := ZQuery1.FieldByName('id_ortu').AsString; // Mendapatkan nilai ID dari record yang dipilih
 
@@ -103,7 +118,7 @@ begin
   ShowMessage('Data Berhasil Di Edit');
 end;
 
-procedure TFtabelOrtu.dbgrd1CellClick(Column: TColumn);
+procedure TTFortu.dbgrd1CellClick(Column: TColumn);
 begin
   Edit1.Text := ZQuery1.FieldByName('nik').AsString;
   Edit2.Text := ZQuery1.FieldByName('nama').AsString;
@@ -115,7 +130,7 @@ begin
   Edit7.Text := ZQuery1.FieldByName('status').AsString;
 end;
 
-procedure TFtabelOrtu.btn3Click(Sender: TObject);
+procedure TTFortu.btn3Click(Sender: TObject);
 begin
   id := ZQuery1.FieldByName('id_ortu').AsString; // Mendapatkan nilai ID dari record yang dipilih
 
@@ -134,6 +149,11 @@ begin
   ZQuery1.Open;
 
   ShowMessage('Data berhasil dihapus');
+end;
+
+procedure TTFortu.btn4Click(Sender: TObject);
+begin
+bersih;
 end;
 
 end.
