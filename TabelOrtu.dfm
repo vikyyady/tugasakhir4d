@@ -236,6 +236,15 @@ object TFortu: TTFortu
     TabOrder = 13
     OnClick = btn5Click
   end
+  object btn6: TButton
+    Left = 536
+    Top = 280
+    Width = 89
+    Height = 41
+    Caption = 'CLOSE'
+    TabOrder = 14
+    OnClick = btn6Click
+  end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False

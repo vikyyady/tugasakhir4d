@@ -5,7 +5,7 @@ uses
   MainMenu in 'MainMenu.pas' {Form1},
   TabelSiswa in 'TabelSiswa.pas' {Fsiswa},
   TabelWalikelas in 'TabelWalikelas.pas' {FwaliKelas},
-  TabelOrtu in 'TabelOrtu.pas' {FtabelOrtu};
+  TabelOrtu in 'TabelOrtu.pas' {TFortu};
 
 {$R *.res}
 
@@ -14,6 +14,6 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TFsiswa, Fsiswa);
   Application.CreateForm(TFwaliKelas, FwaliKelas);
-  Application.CreateForm(TFtabelOrtu, FtabelOrtu);
+  Application.CreateForm(TTFortu, TFortu);
   Application.Run;
 end.

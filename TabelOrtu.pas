@@ -36,6 +36,7 @@ type
     btn5: TButton;
     frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
+    btn6: TButton;
     procedure bersih;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
@@ -43,6 +44,7 @@ type
     procedure btn3Click(Sender: TObject);
     procedure btn4Click(Sender: TObject);
     procedure btn5Click(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -163,6 +165,11 @@ end;
 procedure TTFortu.btn5Click(Sender: TObject);
 begin
 frxReport1.ShowReport()
+end;
+
+procedure TTFortu.btn6Click(Sender: TObject);
+begin
+Close;
 end;
 
 end.
